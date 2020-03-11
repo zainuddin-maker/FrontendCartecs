@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:regular,bold,italic&subset=latin,latin-ext");
+
+.tomboldaftarheader{
+    font-family: 'Muli';
+  font-size: 10px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.57;
+  letter-spacing: normal;
+  border: solid 1px #4774d1;
+    width: 100px;
+    height: 30px;
+  border-radius: 40px;
+  box-shadow: 0 4px 4px 0 rgba(217, 217, 217, 1);
+  border: solid 1px #4774d1;
+  background-color: #ffffff;
+}
+
+.tombolmasukheader{
+    font-family: 'Muli';
+  font-size: 10px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.57;
+  letter-spacing: normal;
+    width: 100px;
+    height: 30px;
+    border-radius: 40px;
+    box-shadow: 0 4px 4px 0 rgba(217, 217, 217, 1);
+    background-image: linear-gradient(to top, #7aa2dc, #3b69ce);
+}

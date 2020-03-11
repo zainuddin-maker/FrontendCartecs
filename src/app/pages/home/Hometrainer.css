@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,700;0,800;1,800&display=swap");
+
+.texttengah {
+
+    text-align: center;
+    font-family: 'Muli';
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.04px;
+  color: rgba(51, 51, 51, 0.6);
+}
+.katatableNo {
+    
+    font-family: 'Muli';
+    font-weight: 800;
+    font-size: 2vmin;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #44435e;
+}
+.katatable {
+    width: 100%;
+
+    font-family: 'Muli';
+    font-size: 2vmin;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #44435e;
+
+}
