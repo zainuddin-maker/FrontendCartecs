@@ -10,7 +10,7 @@ import { Header, Headerafter, Footer } from "../../../components";
 import { BUTTON_OVAL, DARK, BUTTON_OVAL1 } from "../../../../assets/css/main";
 import Sparator from "../../../../app/components/general/Sparator";
 import red from "@material-ui/core/colors/red";
-import { RequestPost, setItem, history } from "app/utils";
+import { RequestPost, history, UserSession } from "app/utils";
 
 export default class UserRegister extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ export default class UserRegister extends React.Component {
     };
     RequestPost("users/login", data)
       .then(res => {
-        setItem("TOKEN", res.data.token);
+        UserSession.setData(res.data);
         history.push("/Home/Student");
       })
       .catch(e => {
