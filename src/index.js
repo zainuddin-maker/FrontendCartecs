@@ -4,8 +4,25 @@ import "./index.css";
 import App from "./app/main/App";
 import * as serviceWorker from "./serviceWorker";
 import "./assets/css/font.css";
-console.log(process.env);
-ReactDOM.render(<App />, document.getElementById("root"));
+import { ConnectedRouter } from "connected-react-router/immutable";
+
+import { BrowserRouter } from "react-router-dom";
+import { history } from "app/utils";
+import configureStore from "redux/configureStore";
+import { Provider } from "react-redux";
+
+const initialState = {};
+const store = configureStore(initialState, history);
+ReactDOM.render(
+  <BrowserRouter>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <App />
+      </ConnectedRouter>
+    </Provider>
+  </BrowserRouter>,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
