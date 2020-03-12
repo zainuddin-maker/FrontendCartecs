@@ -45,12 +45,46 @@
 }
 .input4 {
     width: 100%;
-    height: 135px;
+    height: 100%;
   border-radius: 4px;
   border: solid 1px #e0e0e0;
   background-color: #fbfbfb;
 }
+.gambarthumbnil{
+  width: 138px;
+  height: 45px;
+  font-family: Muli;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: normal;
+  color: rgba(51, 51, 51, 0.4);
+}
 
-
+::-webkit-input-placeholder {
+  width: 550px;
+  color:"#000000";
+  text-align: left;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  width: 550px;
+  color:"#000000";
+  text-align: left;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  width: 550px;
+  color: "#000000";
+  text-align: left;
+}
+:-ms-input-placeholder {
+  width: 550px;
+  color: "#000000";
+  text-align: left;
+}
 
 

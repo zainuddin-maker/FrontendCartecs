@@ -7,7 +7,7 @@ import { COLOR, BOLD, COLUMN_CENNTER, BUTTON_OVAL, DARK } from '../../../assets/
 import { Link } from "react-router-dom";
 import { grey } from '@material-ui/core/colors';
 import "react-multi-carousel/lib/styles.css"; 
-import {Gearbox,Mengecat,Bahanbakar,Radiatormobil,MazdaLogo, BmwLogo, VwLogo, SuzukiLogo, AudiLogo, ToyotaLogo , Background ,Backgrounddua ,Backgroundtiga, Otomotif ,Career, Sertified , Increase,Frame } from '../../../assets/img';
+import {Gambarinput,Gearbox,Mengecat,Bahanbakar,Radiatormobil,MazdaLogo, BmwLogo, VwLogo, SuzukiLogo, AudiLogo, ToyotaLogo , Background ,Backgrounddua ,Backgroundtiga, Otomotif ,Career, Sertified , Increase,Frame } from '../../../assets/img';
 import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
@@ -97,9 +97,22 @@ export default function Uploadtrainer()  {
                                                                           </div>
                                                                     </Grid>
                                                                     <Grid item lg={3} style={{height:"100%"}}>
-                                                                                <div style={{ height:"90%",width:"90%",backgroundColor:"#fbfbfb",border:"solid 1px #e0e0e0",borderRadius:"4px"}}>
+                                                                                <Grid style={{ height:"90%",width:"90%",backgroundColor:"#fbfbfb",border:"dashed 1px #e0e0e0",borderRadius:"4px"}}>
+                                                                                    <Grid container justify="center" alignItems="flex-end" style={{backgroundColor:"#ffffff",height:"50%"}}>
+                                                                                    <img
+                                                                                        src={Gambarinput}
+                                                                                        alt="gambarinput"
+                                                                                        style={{  }}
+                                                                                      />
+                                                                                    </Grid>
+                                                                                    <Grid container justify="center" alignItems="center" style={{backgroundColor:"#ffffff",height:"50%"}} >
+                                                                                            <div className="gambarthumbnil">
+                                                                                            Format gambar .jpg .jpeg .png dan ukuran minimum 300 x 300px
+                                                                                            </div>
+                                                                                    </Grid>
+
                                                                                       
-                                                                                </div>
+                                                                                </Grid>
                                                                     </Grid>
                                                                     <Grid item lg={6} style={{height:"100%",backgroundColor:"#4bdb46"}}>
                                                                     <Button variant="text"  style={{ fontSize:"12px" ,color:"#4e7ad2",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",borderRadius:"40px" ,backgroundColor:"#ffffff",width:"35%" ,height:"22%",border:"solid 1px #4774d1"}}>Pilih File</Button>
@@ -112,9 +125,10 @@ export default function Uploadtrainer()  {
                                                                           </div>
                                                                       </Grid>
                                                                       <Grid item lg={9} style={{height:"100%",backgroundColor:"#c78c34"}}>
-                                                                          <div >
-                                                                              <input className="input2"  type="text" name="username" placeholder="Tuliskan judul materi" style={{paddingLeft:"20px"}} />
-                                                                        </div>
+                                                                          <textarea  className="input2" placeholder="Tuliskan Judul Materi">
+
+                                                                          </textarea>
+                                                                          
                                                                     </Grid>
                                                             </Grid>
                                                             <Grid container direction="row" item lg={12} style={{backgroundColor:"#d29ede" , height:"50px"}}>
@@ -135,8 +149,14 @@ export default function Uploadtrainer()  {
                                                                           Syarat Mengikuti Materi
                                                                           </div>
                                                                     </Grid>
-                                                                    <Grid item lg={9} style={{height:"80%",backgroundColor:"#fbfbfb",border:"solid 1px #e0e0e0",borderRadius:"4px"}}>
-                                                                        
+                                                                    <Grid item lg={9} style={{height:"80%"}}>
+                                                                              <textarea className="input4" placeholder=" Contoh : 
+- Lorem ipsum dolor sit amet lorem
+- Lorem ipsum dolor sit amet lorem
+- Lorem ipsum dolor sit amet lorem
+- Lorem ipsum dolor sit amet lorem
+"/>
+
                                                                     </Grid>
                                                             </Grid>
                                                             <Grid container direction="row"  item lg={12} style={{backgroundColor:"#d42632" , height:"150px"}}>
@@ -145,17 +165,25 @@ export default function Uploadtrainer()  {
                                                                     Apa yang Pelajar Dapatkan dari Materi Ini
                                                                           </div>
                                                                   </Grid>
-                                                                  <Grid item lg={9} style={{height:"80%",backgroundColor:"#fbfbfb",border:"solid 1px #e0e0e0",borderRadius:"4px"}}>
+                                                                  <Grid item lg={9} style={{height:"80%"}}>
+                                                                              <textarea className="input4" placeholder="Contoh : 
+- Lorem ipsum dolor sit amet lorem
+- Lorem ipsum dolor sit amet lorem
+- Lorem ipsum dolor sit amet lorem
+- Lorem ipsum dolor sit amet lorem
+"/>
 
-                                                                  </Grid>
+                                                                    </Grid>
                                                             </Grid>
                                                             <Grid container direction="row"  item lg={12} style={{backgroundColor:"#d42632" , height:"120px"}}>
                                                                    <Grid item lg={3} style={{height:"100%",backgroundColor:"#1977b5"}}>
                                                                    <div className="tabelawal">
-                                                                   Deskripsi Materi
+                                                                           Deskripsi Materi
                                                                           </div>
                                                                     </Grid>
-                                                                    <Grid item lg={9} style={{height:"80%",backgroundColor:"#fbfbfb",border:"solid 1px #e0e0e0",borderRadius:"4px"}}>
+                                                                    <Grid item lg={9} style={{height:"80%"}}>
+                                                                              <textarea className="input4" placeholder="Contoh : 
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "/>
 
                                                                     </Grid>
                                                             </Grid>

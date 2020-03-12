@@ -52,7 +52,7 @@ export default class UserRegister extends React.Component {
               <Grid
                 item
                 lg={12}
-                style={{ height: "610px", backgroundColor: "#ffffff" }}>
+                style={{ backgroundColor: "" }}>
                 <Grid item md={12} style={{ height: "50px" }}>
                   <span className="login100-form-title">
                     Selamat datang kembali di CARtecs E-learning
