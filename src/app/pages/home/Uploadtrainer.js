@@ -39,13 +39,17 @@ export default function Uploadtrainer()  {
     const [state, setState] = React.useState({
       level: ""
     });
-  
+    
+    
+
     const handleChange = name => event => {
       setState({
         ...state,
         [name]: event.target.value
       });
     };
+    
+    
     
     
         return (
@@ -72,12 +76,24 @@ export default function Uploadtrainer()  {
                                     </Grid>
                                     <Grid item lg={12} container direction="row" style={{backgroundColor:"#ffffff", height:"120px"}}  >
                                           <Grid item lg={3} c style={{height:"120px" ,backgroundColor:"#ffffff"}}>
-                                                <Grid item md={12} style={{height:"60px",backgroundColor:"#ffffff"}}>
-                                                      <Button  startIcon={<InfoIcon style={{color:"#4e7ad2"}} />} style={{ fontSize:"16px" ,color:"#333333",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",backgroundColor:"#ffffff",width:"100%" ,height:"60px"}}>Informasi Materi</Button>
+                                                <Grid container direction="row" item md={12} style={{height:"60px",backgroundColor:"#ffffff"}}>
+                                                  <Grid item lg={3} >
 
+                                                  </Grid>
+                                                  <Grid container alignItems="center" justify="flex-start"  item lg={9} >
+                                                     <Button  startIcon={<InfoIcon style={{color:"#4e7ad2"}} />} style={{ fontSize:"16px" ,color:"#333333",textTransform:"capitalize",fontWeight:"bold",backgroundColor:"#ffffff",width:"80%" ,height:"60px"}}>Informasi Materi</Button>
+                                                  </Grid>
                                                 </Grid>
-                                                <Grid item md={12} style={{height:"60px",backgroundColor:"#ffffff"}}>
-                                                <Button  startIcon={<CollectionsBookmarkIcon style={{color:"#4e7ad2"}} />} style={{ fontSize:"16px" ,color:"#333333",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",backgroundColor:"#ffffff",width:"100%" ,height:"60px"}}>Konten</Button>
+                                                <Grid container direction="row" item md={12} style={{height:"60px",backgroundColor:"#ffffff"}}>
+                                                     <Grid item lg={3} >
+                                                       </Grid>
+                                                       
+                                                       <Grid container alignItems="center" justify="flex-start" item lg={9} >
+                                                       <Button  startIcon={<CollectionsBookmarkIcon style={{color:"#4e7ad2"}} />} style={{ fontSize:"16px" ,color:"#333333",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",backgroundColor:"#ffffff",width:"50%" ,height:"60px"}}>Konten</Button>
+                                                         </Grid> 
+                                                      
+                                                      
+                                                      
                                                 </Grid>
                                           </Grid>
                                           <Grid container  justify="center" item lg={9}  style={{height:"800px" ,backgroundColor:"#fbfbfb"}}>
@@ -89,23 +105,23 @@ export default function Uploadtrainer()  {
                                                     
                                                      </Grid>
                                                      <Grid container justify="center"  item lg={12}  style={{height:"750px" ,backgroundColor:"#ffffff",borderRadius:"4px",border:"solid 1px #eaeaea"}}>
-                                                          <Grid item lg={11} style={{backgroundColor:"#000000",marginTop:"30px",marginBottom:"30px"}}>
-                                                            <Grid container direction="row" item lg={12} style={{backgroundColor:"#53db65" , height:"150px"}}>
-                                                                    <Grid item lg={3} style={{height:"100%",backgroundColor:"#c78c34"}}>
+                                                          <Grid item lg={11} style={{marginTop:"30px",marginBottom:"30px"}}>
+                                                            <Grid container direction="row" item lg={12} style={{height:"150px"}}>
+                                                                    <Grid item lg={3} style={{height:"100%"}}>
                                                                           <div className="tabelawal">
                                                                           Foto Thumbnail Materi
                                                                           </div>
                                                                     </Grid>
                                                                     <Grid item lg={3} style={{height:"100%"}}>
-                                                                                <Grid style={{ height:"90%",width:"90%",backgroundColor:"#fbfbfb",border:"dashed 1px #e0e0e0",borderRadius:"4px"}}>
-                                                                                    <Grid container justify="center" alignItems="flex-end" style={{backgroundColor:"#ffffff",height:"50%"}}>
+                                                                                <Grid style={{ height:"90%",width:"90%",border:"dashed 1px #e0e0e0",borderRadius:"4px" ,backgroundColor:"#fbfbfb"}}>
+                                                                                    <Grid container justify="center" alignItems="flex-end" style={{height:"50%"}}>
                                                                                     <img
                                                                                         src={Gambarinput}
                                                                                         alt="gambarinput"
                                                                                         style={{  }}
                                                                                       />
                                                                                     </Grid>
-                                                                                    <Grid container justify="center" alignItems="center" style={{backgroundColor:"#ffffff",height:"50%"}} >
+                                                                                    <Grid container justify="center" alignItems="center" style={{height:"50%"}} >
                                                                                             <div className="gambarthumbnil">
                                                                                             Format gambar .jpg .jpeg .png dan ukuran minimum 300 x 300px
                                                                                             </div>
@@ -114,37 +130,37 @@ export default function Uploadtrainer()  {
                                                                                       
                                                                                 </Grid>
                                                                     </Grid>
-                                                                    <Grid item lg={6} style={{height:"100%",backgroundColor:"#4bdb46"}}>
-                                                                    <Button variant="text"  style={{ fontSize:"12px" ,color:"#4e7ad2",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",borderRadius:"40px" ,backgroundColor:"#ffffff",width:"35%" ,height:"22%",border:"solid 1px #4774d1"}}>Pilih File</Button>
+                                                                    <Grid item lg={6} style={{height:"100%"}}>
+                                                                                <Button variant="text"  style={{ fontSize:"12px" ,color:"#4e7ad2",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",borderRadius:"40px" ,backgroundColor:"#ffffff",width:"35%" ,height:"22%",border:"solid 1px #4774d1",boxShadow:"0 8px 20px 0 rgba(0, 0, 0, 0.1)"}}>Pilih File</Button>
                                                                     </Grid>
                                                             </Grid>
-                                                            <Grid container direction="row" item lg={12} style={{backgroundColor:"#256a9c" , height:"50px"}}>
-                                                                    <Grid item lg={3} style={{height:"100%",backgroundColor:"#1977b5"}}>
+                                                            <Grid container direction="row" item lg={12} style={{ height:"50px"}}>
+                                                                    <Grid item lg={3} style={{height:"100%"}}>
                                                                     <div className="tabelawal">
                                                                           Judul Materi
                                                                           </div>
                                                                       </Grid>
-                                                                      <Grid item lg={9} style={{height:"100%",backgroundColor:"#c78c34"}}>
+                                                                      <Grid item lg={9} style={{height:"100%"}}>
                                                                           <textarea  className="input2" placeholder="Tuliskan Judul Materi">
 
                                                                           </textarea>
                                                                           
                                                                     </Grid>
                                                             </Grid>
-                                                            <Grid container direction="row" item lg={12} style={{backgroundColor:"#d29ede" , height:"50px"}}>
-                                                                     <Grid item lg={3} style={{height:"100%",backgroundColor:"#c78c34"}}>
+                                                            <Grid container direction="row" item lg={12} style={{ height:"50px"}}>
+                                                                     <Grid item lg={3} style={{height:"100%"}}>
                                                                      <div className="tabelawal">
                                                                           Kategori
                                                                           </div>
                                                                     </Grid>
-                                                                    <Grid item lg={9} style={{height:"100%",backgroundColor:"#1977b5"}}>
+                                                                    <Grid item lg={9} style={{height:"100%"}}>
                                                                     <div >
                                                                               <input className="input2"  type="text" name="username" placeholder="Pilih kategori" style={{paddingLeft:"20px"}} />
                                                                         </div>
                                                                     </Grid>
                                                             </Grid>
-                                                            <Grid container direction="row"  item lg={12} style={{backgroundColor:"#d42632" , height:"150px"}}>
-                                                                   <Grid item lg={3} style={{height:"100%",backgroundColor:"#1977b5"}}>
+                                                            <Grid container direction="row"  item lg={12} style={{height:"150px"}}>
+                                                                   <Grid item lg={3} style={{height:"100%"}}>
                                                                    <div className="tabelawal">
                                                                           Syarat Mengikuti Materi
                                                                           </div>
@@ -159,8 +175,8 @@ export default function Uploadtrainer()  {
 
                                                                     </Grid>
                                                             </Grid>
-                                                            <Grid container direction="row"  item lg={12} style={{backgroundColor:"#d42632" , height:"150px"}}>
-                                                                    <Grid item lg={3} style={{height:"100%",backgroundColor:"#c78c34"}}>
+                                                            <Grid container direction="row"  item lg={12} style={{ height:"150px"}}>
+                                                                    <Grid item lg={3} style={{height:"100%"}}>
                                                                     <div className="tabelawal">
                                                                     Apa yang Pelajar Dapatkan dari Materi Ini
                                                                           </div>
@@ -175,8 +191,8 @@ export default function Uploadtrainer()  {
 
                                                                     </Grid>
                                                             </Grid>
-                                                            <Grid container direction="row"  item lg={12} style={{backgroundColor:"#d42632" , height:"120px"}}>
-                                                                   <Grid item lg={3} style={{height:"100%",backgroundColor:"#1977b5"}}>
+                                                            <Grid container direction="row"  item lg={12} style={{ height:"120px"}}>
+                                                                   <Grid item lg={3} style={{height:"100%"}}>
                                                                    <div className="tabelawal">
                                                                            Deskripsi Materi
                                                                           </div>
@@ -191,7 +207,10 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                                                           </Grid>
                                                      </Grid>
                                                      <Grid container justify="center" alignItems="center" item lg={12}  style={{height:"90px" }}>
-                                                        <Button style={{ fontSize:"12px" ,color:"#ffffff",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",borderRadius:"40px" ,backgroundImage:"linear-gradient(to left, #7aa2dc, #3b69ce)",width:"25%" ,height:"40%"}}>Lanjutkan</Button>
+                                                       <Link to="/Home/kontentrainer" style={{width:"25%" ,height:"40%"}}>
+                                                      
+                                                        <Button style={{ fontSize:"12px" ,color:"#ffffff",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",borderRadius:"40px" ,backgroundImage:"linear-gradient(to left, #7aa2dc, #3b69ce)",width:"100%" ,height:"100%"}}>Lanjutkan</Button>
+                                                        </Link>
                                                     </Grid>
                                                 
                                                 

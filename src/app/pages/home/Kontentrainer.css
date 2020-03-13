@@ -115,20 +115,4 @@
   color: rgba(51, 51, 51, 0.4);
 }
 
-.Buttongambar{
-  width: 112px;
-  height: 33.7px;
-  border-radius: 40px;
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
-  border: solid 1px #4774d1;
-  background-color: #ffffff;
 
-  font-family: 'Muli';
-  font-size: 13px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  color: #4e7ad2;
-}

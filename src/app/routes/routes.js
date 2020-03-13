@@ -1,4 +1,4 @@
-import { NotFound, Home,Uploadtrainer,Homestudent, Hometrainer,UserRegister, UserLogin ,UserRegisterMember ,UserRegisterMontir ,UserRegisterPerusahaan} from '../pages'
+import { NotFound, Home,Uploadtrainer,Kontentrainer,Homestudent, Hometrainer,UserRegister, UserLogin ,UserRegisterMember ,UserRegisterMontir ,UserRegisterPerusahaan} from '../pages'
 
 const routes = [
     {
@@ -73,6 +73,14 @@ const empty = [
         component: Uploadtrainer,
 
     },
+    {
+        path: "/Home/kontentrainer",
+        pageTitle: 'Home Trainer Konten',
+        exact: true,
+        component: Kontentrainer,
+
+    },
+
 
 
     // , {
