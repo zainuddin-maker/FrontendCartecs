@@ -12,7 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { Header,Headerafter, Footer } from '../../components/index.js';
-import './Uploadtrainer.css';
+import './Kontentrainersimpan.css';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import InfoIcon from '@material-ui/icons/Info';
 import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
@@ -147,11 +147,7 @@ export default function Uploadtrainer()  {
                                                                                 </Grid>
                                                                         </Grid>
                                                                         <Grid container justify="flex-end" alignItems="center" item lg={12} style={{height:"60px"}}>
-                                                                            <Link to="/Home/kontentrainersimpan" style ={{width:"15%" ,height:"50%"}}>
-
-                                                                           
-                                                                                    <Button style={{ fontSize:"12px" ,color:"#ffffff",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",borderRadius:"40px" ,backgroundImage:"linear-gradient(to left, #7aa2dc, #3b69ce)",width:"100%" ,height:"100%",boxShadow:"0 8px 20px 0 rgba(0, 0, 0, 0.2)"}}>Simpan</Button>
-                                                                                    </Link>
+                                                                        <Button style={{ fontSize:"12px" ,color:"#ffffff",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",borderRadius:"40px" ,backgroundImage:"linear-gradient(to left, #7aa2dc, #3b69ce)",width:"15%" ,height:"50%",boxShadow:"0 8px 20px 0 rgba(0, 0, 0, 0.2)"}}>Simpan</Button>
                                                                         </Grid>
       
                                                             </Grid>
@@ -166,15 +162,8 @@ export default function Uploadtrainer()  {
                                                                             
                                                                             </Grid>
                                                                             <Grid container justify="center"  item lg={12}  style={{height:"300px" ,backgroundColor:"#ffffff",borderRadius:"4px",border:"solid 1px #eaeaea"}}>
-                                                                                            <Grid container direction="column"  style={{height:"100%"  ,width:"40%" }}>
-                                                                                                    <Grid container alignItems="flex-end" justify="center" style={{width:"100%" ,height:"60%"}}>
-                                                                                                    <img alt="Frame" src={Frame} style={{ width:"50%" ,height:"60%" }} />
-                                                                                                    </Grid>
-                                                                                                    <Grid style={{width:"100%" ,height:"40%"}}>
-                                                                                                    <div className="texttengah">
-                                                                                                    Belum ada konten pada materi ini, silahkan isi detail konten lalu klik simpan untuk menambah konten baru
-                                                                                                        </div>
-                                                                                                    </Grid>
+                                                                                            <Grid container direction="row" style ={{height:"20%" ,width:"100%" ,background:"#ddffff"}}>
+
                                                                                             </Grid>
 
                                                                             </Grid>

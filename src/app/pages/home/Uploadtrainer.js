@@ -16,7 +16,13 @@ import './Uploadtrainer.css';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import InfoIcon from '@material-ui/icons/Info';
 import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
+
+import Upload from "./uploadimage";
 //My first changex
+
+
+
+
 const useStyles = makeStyles(theme => ({
     formControl: {
       margin: theme.spacing(1),
@@ -32,6 +38,7 @@ const useStyles = makeStyles(theme => ({
       marginTop: theme.spacing(0)
     }
   }));
+
   
 
 export default function Uploadtrainer()  {
@@ -48,6 +55,8 @@ export default function Uploadtrainer()  {
         [name]: event.target.value
       });
     };
+
+    
     
     
     
@@ -132,6 +141,7 @@ export default function Uploadtrainer()  {
                                                                     </Grid>
                                                                     <Grid item lg={6} style={{height:"100%"}}>
                                                                                 <Button variant="text"  style={{ fontSize:"12px" ,color:"#4e7ad2",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",borderRadius:"40px" ,backgroundColor:"#ffffff",width:"35%" ,height:"22%",border:"solid 1px #4774d1",boxShadow:"0 8px 20px 0 rgba(0, 0, 0, 0.1)"}}>Pilih File</Button>
+                                                                                <Upload/>
                                                                     </Grid>
                                                             </Grid>
                                                             <Grid container direction="row" item lg={12} style={{ height:"50px"}}>
