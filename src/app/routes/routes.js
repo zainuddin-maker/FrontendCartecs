@@ -1,4 +1,4 @@
-import { NotFound, Home,Kontentrainersimpan,Uploadtrainer,Kontentrainer,Homestudent, Hometrainer,UserRegister, UserLogin ,UserRegisterMember ,UserRegisterMontir ,UserRegisterPerusahaan} from '../pages'
+import { Hometrainersimpan,NotFound, Home,Kontentrainersimpan,Uploadtrainer,Kontentrainer,Homestudent, Hometrainer,UserRegister, UserLogin ,UserRegisterMember ,UserRegisterMontir ,UserRegisterPerusahaan} from '../pages'
 
 const routes = [
     {
@@ -67,7 +67,14 @@ const empty = [
 
     },
     {
-        path: "/Home/trainerupload",
+        path: "/Home/Hometrainersimpan",
+        pageTitle: 'Home Trainer Simpan',
+        exact: true,
+        component: Hometrainersimpan,
+
+    },
+    {
+        path: "/Home/trainerupload", 
         pageTitle: 'Home Trainer Upload',
         exact: true,
         component: Uploadtrainer,

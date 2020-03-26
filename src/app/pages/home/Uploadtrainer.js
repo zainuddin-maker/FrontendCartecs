@@ -7,7 +7,7 @@ import { COLOR, BOLD, COLUMN_CENNTER, BUTTON_OVAL, DARK } from '../../../assets/
 import { Link } from "react-router-dom";
 import { grey } from '@material-ui/core/colors';
 import "react-multi-carousel/lib/styles.css"; 
-import {Gambarinput,Gearbox,Mengecat,Bahanbakar,Radiatormobil,MazdaLogo, BmwLogo, VwLogo, SuzukiLogo, AudiLogo, ToyotaLogo , Background ,Backgrounddua ,Backgroundtiga, Otomotif ,Career, Sertified , Increase,Frame } from '../../../assets/img';
+import {Thumbnil,Gambarinput,Gearbox,Mengecat,Bahanbakar,Radiatormobil,MazdaLogo, BmwLogo, VwLogo, SuzukiLogo, AudiLogo, ToyotaLogo , Background ,Backgrounddua ,Backgroundtiga, Otomotif ,Career, Sertified , Increase,Frame } from '../../../assets/img';
 import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
@@ -115,35 +115,7 @@ export default function Uploadtrainer()  {
                                                      </Grid>
                                                      <Grid container justify="center"  item lg={12}  style={{height:"750px" ,backgroundColor:"#ffffff",borderRadius:"4px",border:"solid 1px #eaeaea"}}>
                                                           <Grid item lg={11} style={{marginTop:"30px",marginBottom:"30px"}}>
-                                                            <Grid container direction="row" item lg={12} style={{height:"150px"}}>
-                                                                    <Grid item lg={3} style={{height:"100%"}}>
-                                                                          <div className="tabelawal">
-                                                                          Foto Thumbnail Materi
-                                                                          </div>
-                                                                    </Grid>
-                                                                    <Grid item lg={3} style={{height:"100%"}}>
-                                                                                <Grid style={{ height:"90%",width:"90%",border:"dashed 1px #e0e0e0",borderRadius:"4px" ,backgroundColor:"#fbfbfb"}}>
-                                                                                    <Grid container justify="center" alignItems="flex-end" style={{height:"50%"}}>
-                                                                                    <img
-                                                                                        src={Gambarinput}
-                                                                                        alt="gambarinput"
-                                                                                        style={{  }}
-                                                                                      />
-                                                                                    </Grid>
-                                                                                    <Grid container justify="center" alignItems="center" style={{height:"50%"}} >
-                                                                                            <div className="gambarthumbnil">
-                                                                                            Format gambar .jpg .jpeg .png dan ukuran minimum 300 x 300px
-                                                                                            </div>
-                                                                                    </Grid>
-
-                                                                                      
-                                                                                </Grid>
-                                                                    </Grid>
-                                                                    <Grid item lg={6} style={{height:"100%"}}>
-                                                                                <Button variant="text"  style={{ fontSize:"12px" ,color:"#4e7ad2",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",borderRadius:"40px" ,backgroundColor:"#ffffff",width:"35%" ,height:"22%",border:"solid 1px #4774d1",boxShadow:"0 8px 20px 0 rgba(0, 0, 0, 0.1)"}}>Pilih File</Button>
-                                                                                <Upload/>
-                                                                    </Grid>
-                                                            </Grid>
+                                                          <Upload />
                                                             <Grid container direction="row" item lg={12} style={{ height:"50px"}}>
                                                                     <Grid item lg={3} style={{height:"100%"}}>
                                                                     <div className="tabelawal">

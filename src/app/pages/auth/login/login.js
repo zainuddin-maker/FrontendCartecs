@@ -5,11 +5,8 @@ import "../../../../assets/css/login/main.css";
 import "assets/css/font.css";
 import { Grid, Button } from "@material-ui/core";
 import { Login } from "../../../../assets/img";
-import { grey, blue } from "@material-ui/core/colors";
-import { Header, Headerafter, Footer } from "../../../components";
-import { BUTTON_OVAL, DARK, BUTTON_OVAL1 } from "../../../../assets/css/main";
-import Sparator from "../../../../app/components/general/Sparator";
-import red from "@material-ui/core/colors/red";
+import { Header} from "../../../components";
+
 import { RequestPost, history, UserSession } from "app/utils";
 
 export default class UserRegister extends React.Component {
@@ -27,7 +24,7 @@ export default class UserRegister extends React.Component {
     RequestPost("users/login", data)
       .then(res => {
         UserSession.setData(res.data);
-        history.push("/Home/Student");
+        history.push("/Home/trainer");
       })
       .catch(e => {
         console.log(e);
@@ -135,7 +132,7 @@ export default class UserRegister extends React.Component {
                       style={{ margin: "auto" }}>
                       <div
                         className="login100-form-bgbtn"
-                        style={{ backgroundColor: blue[800] }}></div>
+                        style={{ backgroundColor: "#007bb5" }}></div>
                       <button className="login100-form-btn3">Linkedin</button>
                     </div>
                   </div>
@@ -145,7 +142,7 @@ export default class UserRegister extends React.Component {
                       style={{ margin: "auto" }}>
                       <div
                         className="login100-form-bgbtn"
-                        style={{ backgroundColor: blue[700] }}></div>
+                        style={{ backgroundColor: "#3a559f" }}></div>
                       <button className="login100-form-btn3">Facebook</button>
                     </div>
                   </div>

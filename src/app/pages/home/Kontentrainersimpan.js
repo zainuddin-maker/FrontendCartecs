@@ -16,6 +16,11 @@ import './Kontentrainersimpan.css';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import InfoIcon from '@material-ui/icons/Info';
 import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
+
+import IconButton from '@material-ui/core/IconButton';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'; 
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 //My first changex
 const useStyles = makeStyles(theme => ({
     formControl: {
@@ -161,14 +166,172 @@ export default function Uploadtrainer()  {
                                                                                 </div>
                                                                             
                                                                             </Grid>
-                                                                            <Grid container justify="center"  item lg={12}  style={{height:"300px" ,backgroundColor:"#ffffff",borderRadius:"4px",border:"solid 1px #eaeaea"}}>
-                                                                                            <Grid container direction="row" style ={{height:"20%" ,width:"100%" ,background:"#ddffff"}}>
+                                                                            <Grid container direction="column"  item lg={12}  style={{height:"300px" ,backgroundColor:"#ffffff",borderRadius:"4px",border:"solid 1px #eaeaea"}}>
+                                                                                            <Grid container direction="row" style ={{height:"15%" ,width:"100%" ,background:"rgba(122, 162, 220, 0.2)"}}>
+                                                                                                <Grid container justify="center" alignItems="center" style={{width:"5%" , height:"100%"}}>
+                                                                                                      <div className="tabeltext">
+                                                                                                         No.
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center"  style={{width:"55%" , height:"100%" }}>
+                                                                                                <div className="tabeltext">
+                                                                                                     Judul Konten
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center" style={{width:"15%" , height:"100%" }}>
+                                                                                                <div className="tabeltext">
+                                                                                                Format File
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center" style={{width:"15%" , height:"100%" }}>
+                                                                                                <div className="tabeltext">
+                                                                                                Action
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center" style={{width:"10%" , height:"100%" }}>
+
+                                                                                                </Grid>
+                                                                                            </Grid>
+                                                                                            <Grid container direction="column" style={{height:"45%" ,width:"100%" }}>
+
+                                                                                            
+                                                                                            <Grid container direction="row" style ={{height:"33%" ,width:"100%" ,background:"#ffffff" ,borderBottom:" 1px solid #eaeaea" ,borderLeft:"1px solid #eaeaea"}}>
+                                                                                                <Grid container justify="center" alignItems="center" style={{width:"5%" , height:"100%"}}>
+                                                                                                      <div className="tabeltext">
+                                                                                                         1
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center"  style={{width:"55%" , height:"100%" }}>
+                                                                                                <div className="tabeltext">
+                                                                                                Cara kerja transmisi otomatis
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center" style={{width:"15%" , height:"100%" }}>
+                                                                                                <div className="tabeltext">
+                                                                                                Video
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center" style={{width:"15%" , height:"100%" }}>
+                                                                                                        <IconButton   >
+                                                                                                          <MoreHorizIcon />
+                                                                                                        </IconButton>
+                                                                                                </Grid>
+                                                                                                <Grid  container direction="column" justify="flex-start" alignItems="center" style={{width:"10%" , height:"100%" }}>
+                                                                                                        <Grid container justify="center" alignItems="center" style={{width:"100%" ,height:"50%"}}>
+                                                                                                        <IconButton size="small" >
+                                                                                                                   <KeyboardArrowUpIcon fontSize="small"  />
+                                                                                                        </IconButton>
+                                                                                                        </Grid>
+
+                                                                                                        <Grid container justify="center" alignItems="center" style={{width:"100%" ,height:"50%"}}> 
+                                                                                                        <IconButton size="small" >
+                                                                                                                   <KeyboardArrowDownIcon fontSize="small"  />
+                                                                                                        </IconButton>
+                                                                                                        </Grid>
+                                                                                                </Grid>
+                                                                                            </Grid>
+                                                                                            
+                                                                                            <Grid container direction="row" style ={{height:"33%" ,width:"100%" ,background:"#ffffff" ,borderBottom:" 1px solid #eaeaea",borderLeft:"1px solid #eaeaea"}}>
+                                                                                                <Grid container justify="center" alignItems="center" style={{width:"5%" , height:"100%"}}>
+                                                                                                      <div className="tabeltext">
+                                                                                                         2
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center"  style={{width:"55%" , height:"100%" }}>
+                                                                                                <div className="tabeltext">
+                                                                                                Bag 2. Bagaimana Otomatisasi gearbox bekerja
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center" style={{width:"15%" , height:"100%" }}>
+                                                                                                <div className="tabeltext">
+                                                                                                PDF
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center" style={{width:"15%" , height:"100%" }}>
+                                                                                                        <IconButton   >
+                                                                                                          <MoreHorizIcon />
+                                                                                                        </IconButton>
+                                                                                                </Grid>
+                                                                                                <Grid  container direction="column" justify="flex-start" alignItems="center" style={{width:"10%" , height:"100%" }}>
+                                                                                                        <Grid container justify="center" alignItems="center" style={{width:"100%" ,height:"50%"}}>
+                                                                                                        <IconButton size="small" >
+                                                                                                                   <KeyboardArrowUpIcon fontSize="small"  />
+                                                                                                        </IconButton>
+                                                                                                        </Grid>
+
+                                                                                                        <Grid container justify="center" alignItems="center" style={{width:"100%" ,height:"50%"}}> 
+                                                                                                        <IconButton size="small" >
+                                                                                                                   <KeyboardArrowDownIcon fontSize="small"  />
+                                                                                                        </IconButton>
+                                                                                                        </Grid>
+                                                                                                </Grid>
+                                                                                            </Grid>
+                                                                                            <Grid container direction="row" style ={{height:"33%" ,width:"100%" ,background:"#ffffff" ,borderBottom:" 1px solid #eaeaea",borderLeft:"1px solid #eaeaea"}}>
+                                                                                                <Grid container justify="center" alignItems="center" style={{width:"5%" , height:"100%"}}>
+                                                                                                      <div className="tabeltext">
+                                                                                                         3
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center"  style={{width:"55%" , height:"100%" }}>
+                                                                                                <div className="tabeltext">
+                                                                                                Bag 3. Bagaimana Otomatisasi gearbox bekerja
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center" style={{width:"15%" , height:"100%" }}>
+                                                                                                <div className="tabeltext">
+                                                                                                PDF
+                                                                                                      </div>
+                                                                                                </Grid>
+                                                                                                <Grid container justify="flex-start" alignItems="center" style={{width:"15%" , height:"100%" }}>
+                                                                                                        <IconButton   >
+                                                                                                          <MoreHorizIcon />
+                                                                                                        </IconButton>
+                                                                                                </Grid>
+                                                                                                <Grid  container direction="column" justify="flex-start" alignItems="center" style={{width:"10%" , height:"100%" }}>
+                                                                                                        <Grid container justify="center" alignItems="center" style={{width:"100%" ,height:"50%"}}>
+                                                                                                        <IconButton size="small" >
+                                                                                                                   <KeyboardArrowUpIcon fontSize="small"  />
+                                                                                                        </IconButton>
+                                                                                                        </Grid>
+
+                                                                                                        <Grid container justify="center" alignItems="center" style={{width:"100%" ,height:"50%"}}> 
+                                                                                                        <IconButton size="small" >
+                                                                                                                   <KeyboardArrowDownIcon fontSize="small"  />
+                                                                                                        </IconButton>
+                                                                                                        </Grid>
+                                                                                                </Grid>
+                                                                                            </Grid>
+                                                                                            </Grid>
+                                                                                            <Grid container direction="row" style={{height:"15%",width:"100%"}}>
+                                                                                                    <Grid container justify="center" alignItems="center" style={{height:"100%" ,width:"16%" }}>
+                                                                                                          <div className="materiperhalaman">
+                                                                                                            Materi perhalaman 
+                                                                                                          </div>
+                                                                                                    </Grid>
+                                                                                                    <Grid container justify="center" alignItems="center"  style={{height:"100%" ,width:"5%" }}>
+                                                                                                          
+                                                                                                         <div className="buttonallblue">
+                                                                                                           10
+                                                                                                         </div>
+                                                                                                    </Grid>
+                                                                                                    <Grid container justify="center" alignItems="center"  style={{height:"100%" ,width:"5%" }}>
+                                                                                                          
+                                                                                                          <div className="buttonallwhite">
+                                                                                                            15
+                                                                                                          </div>
+                                                                                                     </Grid>
+                                                                                                     <Grid container justify="center" alignItems="center"  style={{height:"100%" ,width:"5%" }}>
+                                                                                                          
+                                                                                                          <div className="buttonallwhite">
+                                                                                                            20
+                                                                                                          </div>
+                                                                                                     </Grid>
+
 
                                                                                             </Grid>
-
                                                                             </Grid>
                                                                             <Grid container justify="center" alignItems="center" item lg={12}  style={{height:"90px" }}>
-                                                                            <Link to="/Home/kontentrainer" style={{width:"25%" ,height:"40%"}}>
+                                                                                  <Link to="/Home/Hometrainersimpan" style={{width:"25%" ,height:"40%"}}>
                                                                             
                                                                                 <Button style={{ fontSize:"12px" ,color:"#ffffff",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",borderRadius:"40px" ,backgroundImage:"linear-gradient(to left, #7aa2dc, #3b69ce)",width:"100%" ,height:"100%",boxShadow:"0 8px 20px 0 rgba(0, 0, 0, 0.2)" ,opacity:"0.5"}}>Simpan dan Publish</Button>
                                                                                 </Link>

@@ -16,6 +16,8 @@ import './Uploadtrainer.css';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import InfoIcon from '@material-ui/icons/Info';
 import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
+
+import Uploadkonten from "./uploadimagekonten";
 //My first changex
 const useStyles = makeStyles(theme => ({
     formControl: {
@@ -118,34 +120,8 @@ export default function Uploadtrainer()  {
                                                                                     </div>
                                                                                 </Grid>
                                                                         </Grid>
-                                                                        <Grid container direction="row" item lg={12} style={{height:"150px"}}>
-                                                                                <Grid item lg={3} style={{height:"100%"}}>
-                                                                                    <div className="tabelawal">
-                                                                                    Foto Thumbnail Materi
-                                                                                    </div>
-                                                                                </Grid>
-                                                                                <Grid item lg={3} style={{height:"100%"}}>
-                                                                                            <Grid style={{ height:"90%",width:"90%",border:"dashed 1px #e0e0e0",borderRadius:"4px" ,backgroundColor:"#fbfbfb"}}>
-                                                                                                <Grid container justify="center" alignItems="flex-end" style={{height:"50%"}}>
-                                                                                                <img
-                                                                                                    src={Gambarinput}
-                                                                                                    alt="gambarinput"
-                                                                                                    style={{  }}
-                                                                                                />
-                                                                                                </Grid>
-                                                                                                <Grid container justify="center" alignItems="center" style={{height:"50%"}} >
-                                                                                                        <div className="gambarthumbnil">
-                                                                                                        Format gambar .jpg .jpeg .png dan ukuran minimum 300 x 300px
-                                                                                                        </div>
-                                                                                                </Grid>
-
-                                                                                                
-                                                                                            </Grid>
-                                                                                </Grid>
-                                                                                <Grid item lg={6} style={{height:"100%"}}>
-                                                                                <Button variant="text"  style={{ fontSize:"12px" ,color:"#4e7ad2",textAlign:"center",textTransform:"capitalize",fontWeight:"bold",borderRadius:"40px" ,backgroundColor:"#ffffff",width:"35%" ,height:"22%",border:"solid 1px #4774d1" ,boxShadow:"0 8px 20px 0 rgba(0, 0, 0, 0.1)"}}>Pilih File</Button>
-                                                                                </Grid>
-                                                                        </Grid>
+                                                                        
+                                                                        <Uploadkonten />
                                                                         <Grid container justify="flex-end" alignItems="center" item lg={12} style={{height:"60px"}}>
                                                                             <Link to="/Home/kontentrainersimpan" style ={{width:"15%" ,height:"50%"}}>
 

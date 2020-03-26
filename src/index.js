@@ -5,8 +5,8 @@ import App from "./app/main/App";
 import Upload from "../src/app/pages/home/uploadimage";
 import * as serviceWorker from "./serviceWorker";
 import "./assets/css/font.css";
-import { ConnectedRouter } from "connected-react-router/immutable";
 
+import { ConnectedRouter } from "connected-react-router/immutable";
 import { BrowserRouter } from "react-router-dom";
 import { history } from "app/utils";
 import configureStore from "redux/configureStore";
@@ -18,7 +18,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <Upload />
+        <App />
       </ConnectedRouter>
     </Provider>
   </BrowserRouter>,
