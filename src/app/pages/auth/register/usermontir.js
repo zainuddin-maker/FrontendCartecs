@@ -6,14 +6,121 @@ import { Link } from "react-router-dom";
 import { grey , red } from '@material-ui/core/colors';
 import { Carousel } from "react-responsive-carousel"; 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-import { Montir ,Info} from '../../../../assets/img';
+import Info from '../../../../assets/img/Infoicon.svg';
 import '../../../../assets/css/login/util.css';
 import '../../../../assets/css/login/main.css';
-
+import InfoIcon from '@material-ui/icons/Info';
+import { RequestPost, history, UserSession } from "app/utils";
 
 
 export default class UserRegister extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+           email: "", 
+           fullName: "" ,
+           password:"" ,
+           confirmpassword:"",
+           formErrors: {email: '', password: '',fullName:'',confirmpassword:''},
+           emailValid: false,
+           passwordValid: false,
+           fullNameValid:false ,
+           confirmpasswordValid:false,
+           formValid: false ,
+           daftar :false ,
+           regis : false  
+          };
+        this.handleRegister = this.handleRegister.bind(this);
+        
+      }
+
+      handleRegister(e) {
+        e.preventDefault();
+        const data = {
+          email: this.state.email,
+          compID : 1,
+          fullName : this.state.fullName,
+          roles :["montir"],
+          password: this.state.password
+        };
+        RequestPost("users", data)
+          .then(res => {
+            UserSession.setData(res.data);
+            console.log(res.data)
+            this.setState({regis: true });
+            this.setState({daftar: false });
+            setTimeout(() => {
+              history.push("login")
+          }, 2000)
+            /*history.push("login"); */
+            
+            
+            
+            
+          })
+          .catch(e => {
+            console.log(e);
+            this.setState({daftar: true });
+            this.setState({regis: false });
+            
+          });
+          
+          
+      }
+      handleUserInput = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({[name]: value},
+          () => { this.validateField(name, value) });
+      }
+
+      validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let emailValid = this.state.emailValid;
+        let passwordValid = this.state.passwordValid;
+        let fullNameValid = this.state.fullNameValid;
+        let confirmpasswordValid = this.state.confirmpasswordValid;
+        let password = this.state.password;
+        
+        switch(fieldName) {
+          case 'email':
+            emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+            fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+            break;
+          case 'password':
+            passwordValid = value.length >= 8;
+            fieldValidationErrors.password = passwordValid ? '': ' is too short';
+            break;
+          case 'fullName':
+            fullNameValid = value.length >= 5;
+              fieldValidationErrors.fullName = fullNameValid ? '': ' is too short';
+              break;
+          case 'confirmpassword':
+            confirmpasswordValid = value == password;
+              fieldValidationErrors.confirmpassword = confirmpasswordValid ? '': ' is too short';
+              break;    
+          default:
+            break;
+        }
+        this.setState({formErrors: fieldValidationErrors,
+                        emailValid: emailValid,
+                        passwordValid: passwordValid,
+                        fullNameValid :fullNameValid,
+                        confirmpasswordValid :confirmpasswordValid
+                      }, this.validateForm);
+      }
+    
+      validateForm() {
+        this.setState({formValid: this.state.emailValid && this.state.passwordValid && this.state.fullNameValid && this.state.confirmpasswordValid });
+      }
+      
+      errorClass(error) {
+        return(error.length === 0 ? '' : 'has-error');
+      }
     render() {
+      const isdaftar = this.state.daftar; 
+      const isregis = this.state.regis; 
         return (
             
             <React.Fragment>
@@ -21,8 +128,8 @@ export default class UserRegister extends React.Component {
                         <Header />
                 </Grid>
                    
-                <Grid container justify="center" alignContent="center">
-                    <Grid item lg={12} style={{ backgroundColor: grey[100] }}>
+                <Grid container justify="center" alignContent="center" style={{backgroundColor:"#000000"}}>
+                    <Grid item lg={12} style={{ backgroundColor: "#ffffff" }}>
                         <Grid container justify="center" direction="row" alignItems="flex-start">
                             <Grid item lg={10}>
                                 <Grid container justify="center" direction="row" alignItems="flex-start" >
@@ -30,49 +137,105 @@ export default class UserRegister extends React.Component {
                                         <h2>Daftar sebagai Montir</h2>
                                     </Grid>
                                     <Grid  item lg={12} style={{ ... COLUMN_CENNTER2}}>
-                                                <Grid  style={{paddingTop :"0px", width: 400,backgroundColor:"#ffffff" , height :"450px" ,borderRadius:"8px"  ,border: '1px solid #eaeaea' }}>
+                                    <form onSubmit={this.handleRegister}>
+                                                <Grid  style={{paddingTop :"0px", width: 400,backgroundColor:"#ffffff" , height :"550px" ,borderRadius:"8px"  ,border: '1px solid #eaeaea' }}>
                                                     <div>
-                                                        <div style={{ color:"#ffffff", fontSize: "13px" ,backgroundColor:"#f79256" ,paddingBottom:"16px",paddingTop:"16px" ,paddingLeft:"24px",paddingRight:"24px",borderTopLeftRadius:"8px" ,borderTopRightRadius:"8px" }}>
-                                                          Info : Untuk mendaftar sebagai montir, gunakan email perusahaan dimana tempat Anda bekerja
-                                                        </div>
+                                                        <Grid container direction="row" style={{ backgroundColor:"#f79256", borderTopLeftRadius:"8px" ,borderTopRightRadius:"8px",paddingTop:"16px" ,paddingBottom:"16px",paddingLeft:"16px",paddingRight:"16px" }}>
+                                                          <Grid container justify="center" alignItems="flex-start" style={{ width:"12%" }}>
+                                                          <img
+                                                            src={Info} 
+                                                            alt="Info"
+                                                          />
+                                                          </Grid>
+                                                          <Grid style={{ width:"88%",color:"#ffffff" ,fontSize:"12px" ,fontWeight:"600"}}>
+                                                          
+                                                            
+                                                            <Greeting  isdaftar={isdaftar} isregis={isregis} />
+                                                            
+                                                          </Grid>
+
+                                                        </Grid>
                                                     </div>
 
                                                 
                                                     <div  style={{  paddingLeft:"45px" ,paddingRight:"45px" }} >
-                                                        <div className="wrap-input100 validate-input" data-validate="Username is required">
+                                                        <div className= {`wrap-input100 ${this.errorClass(this.state.formErrors.email)}`} data-validate="Username is required">
                                                           <span  style={{fontFamily:"sans-serif" ,fontWeight:"bold ",fontSize :"13px",color:"#333333"}}>Email</span>
-                                                          <input  type="text" name="username" placeholder="Masukkan email Anda" style={{ border: '2px solid #dbdbdb', paddingLeft:"20px",width :"100%" ,height :"40px",backgroundColor:"#f5f5f5" ,borderRadius: "4px" }} />
-                                                          <span className="focus-input100"></span>
+                                                          <input  
+                                                          type="text" 
+                                                          name="email" 
+                                                          placeholder="Masukkan email Anda" 
+                                                          className="style-kotak"
+                                                          value={this.state.email}
+                                                          onChange={this.handleUserInput} 
+                                                            />
+                                                          
                                                          </div>
                                                     </div>
-                                                    <div  style={{ paddingLeft:"45px" ,paddingRight:"45px" }} >
-                                                        <div className="wrap-input100 validate-input" data-validate="Username is required">
-                                                          <span  style={{fontFamily:"sans-serif" ,fontWeight:"bold ",fontSize :"13px",color:"#333333"}}>Password</span>
-                                                          <input  type="password" name="username" placeholder="Masukkan password" style={{ border: '2px solid #dbdbdb', paddingLeft:"20px",width :"100%" ,height :"40px",backgroundColor:"#f5f5f5" ,borderRadius: "4px" }} />
-                                                          <span className="focus-input100"></span>
-                                                         </div>
-                                                    </div>
+
                                                     <div  style={{  paddingLeft:"45px" ,paddingRight:"45px" }} >
-                                                        <div className="wrap-input100 validate-input" data-validate="Username is required">
-                                                          <span  style={{fontFamily:"sans-serif" ,fontWeight:"bold ",fontSize :"13px",color:"#333333"}}>Konfirmasi Password</span>
-                                                          <input  type="password" name="username" placeholder="Masukkan password kembali" style={{ border: '2px solid #dbdbdb', paddingLeft:"20px",width :"100%" ,height :"40px",backgroundColor:"#f5f5f5" ,borderRadius: "4px" }} />
+                                                        <div className={`wrap-input100 ${this.errorClass(this.state.formErrors.fullName)}`} data-validate="Username is required">
+                                                          <span  style={{fontFamily:"sans-serif" ,fontWeight:"bold ",fontSize :"13px",color:"#333333"}}>Full Name</span>
+                                                          <input  
+                                                          type="text" 
+                                                          name="fullName" 
+                                                          placeholder="Masukkan Nama Panjang Anda" 
+                                                          className="style-kotak"
+                                                          value={this.state.fullName}
+                                                          onChange={this.handleUserInput} 
+                                                            />
                                                           <span className="focus-input100"></span>
                                                          </div>
                                                     </div>
+
+
+                                                    <div  style={{ paddingLeft:"45px" ,paddingRight:"45px" }} >
+                                                        <div className={`wrap-input100 ${this.errorClass(this.state.formErrors.password)}`} >
+                                                          <span  style={{fontFamily:"sans-serif" ,fontWeight:"bold ",fontSize :"13px",color:"#333333"}}>Password</span>
+                                                          <input  
+                                                          type="password" 
+                                                          name="password" 
+                                                          placeholder="Masukkan password" 
+                                                          className="style-kotak"
+
+                                                          value={this.state.password}
+                                                          onChange={this.handleUserInput} 
+                                                          />
+                                                          <span className="focus-input100"></span>
+                                                         </div>
+                                                    </div>
+
+                                                    <div  style={{  paddingLeft:"45px" ,paddingRight:"45px" }} >
+                                                        <div className={`wrap-input100 ${this.errorClass(this.state.formErrors.confirmpassword)}`} data-validate="Username is required">
+                                                          <span  style={{fontFamily:"sans-serif" ,fontWeight:"bold ",fontSize :"13px",color:"#333333"}}>Konfirmasi Password</span>
+                                                          <input  
+                                                          type="password" 
+                                                          name="confirmpassword" 
+                                                          placeholder="Masukkan password kembali" 
+                                                          className="style-kotak"
+
+                                                          value={this.state.confirmpassword}
+                                                          onChange={this.handleUserInput} 
+                                                           />
+                                                          <span className="focus-input100"></span>
+                                                         </div>
+                                                    </div>
+
                                                     <div className="container-login100-form-btn" style={{  paddingLeft:"45px" ,paddingRight:"45px",paddingTop:"20px" }}  >
                                                        <div className="wrap-login100-form-btn" style={{ margin: 'auto' }}>
                                                            <div className="login100-form-bgbtn" style={{ backgroundColor: "#3B69CE"  }}>
                                     
                                                           </div>
-                                                             <button className="login100-form-btn1" >
+                                                             <button type="submit" className="login100-form-btn1 " disabled={!this.state.formValid} >
                                                               Daftar
-							                                </button>
+							                                              </button>
                                                       </div>
                                                    </div>
 
                                                     
                                                     
                                                 </Grid>
+                                                </form>
                                      </Grid>
                                      <Grid item md={10} style={{  height: "10px" }}>
                                         
@@ -87,4 +250,35 @@ export default class UserRegister extends React.Component {
             </React.Fragment>
         )
     }
+}
+function Daftar(props) {
+  return <div>Maaf, Akun Telah Terdaftar </div>;
+}
+
+function Regist(props) {
+  return <div>Selamat, akun telah didaftarkan</div>;
+}
+
+function Greeting(props) {
+  const isdaftar = props.isdaftar;
+  const isregis = props.isregis;
+  
+  if (isregis) {
+    return <Regist />;
+  }
+  else
+  {
+    if (isdaftar) {
+      return <Daftar />;
+    }
+    else
+    {
+      return <div>Untuk mendaftar sebagai montir, gunakan email perusahaan dimana tempat Anda bekerja</div>;
+    }
+  }
+
+ 
+
+  
+  
 }

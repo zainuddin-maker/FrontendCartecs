@@ -18,9 +18,9 @@ import Pengemudian from "../../../assets/img/Pengemudian.svg";
 import Roda from "../../../assets/img/Roda.svg";
 import Transmisi from "../../../assets/img/Transmisi.svg";
 import Suspensi from "../../../assets/img/Suspensi.svg";
-import { BUTTON_OVAL, DARK } from '../../../assets/css/main';
 import Sparator from '../general/Sparator';
 
+import Dropdowncui from "../dropdown/dropdownprofile";
 
 import { Dropdown, Menu,Image } from 'semantic-ui-react' ;
 import 'semantic-ui-css/semantic.min.css';
@@ -241,9 +241,9 @@ export default function PrimaryAppBar() {
                                                     </Dropdown.Menu>
                                                 </Dropdown>
 
-                                                <Dropdown trigger={trigger2}  pointing='left' className='link item' margin="auto" style={{height:"30px",width:"140px"}} >
+                                                <Dropdown  trigger={trigger2}  pointing='left' className='link item' margin="auto" style={{height:"30px",width:"140px"}} >
                                                     
-                                                    <Dropdown.Menu>
+                                                    <Dropdown.Menu  >
                                                     
                                                         <Link to="/users/login">
                                                                 <Dropdown.Item style={{color:"#000000" ,paddingLeft:"16px" ,width:"250px",fontSize:"12px"}}>Teknologi Bodi Kendaraan</Dropdown.Item>
@@ -259,7 +259,7 @@ export default function PrimaryAppBar() {
                                                 <Dropdown trigger={trigger3}  pointing='left' className='link item' margin="auto" style={{height:"30px",width:"140px"}} >
                                                   <Dropdown.Menu>
                                                     <Link to="/users/login">
-                                                                <Dropdown.Item style={{color:"#000000" ,paddingLeft:"16px" ,width:"250px",fontSize:"12px"}}>Teknik Rem</Dropdown.Item>
+                                                                <Dropdown.Item style={{color:"#000000" ,paddingLeft:"16px" ,width:"250px",height:"20px",fontSize:"12px"}}>Teknik Rem</Dropdown.Item>
                                                         </Link>
                                                    </Dropdown.Menu>
                                                 </Dropdown>
@@ -389,9 +389,9 @@ export default function PrimaryAppBar() {
                                     </div>
                                     
                                     <Sparator type="vertical" width={10} />
-                                    <Link to="/users/loginpengguna ">
-                                    <img alt="Profile Logo" src={Profile}  style={{  }} />
-                                    </Link>
+                                    
+                                    <Dropdowncui />
+                                    
                                 </div>
                                 
                             </Grid>

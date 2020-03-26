@@ -24,27 +24,48 @@ export default class UserRegister extends React.Component {
     RequestPost("users/login", data)
       .then(res => {
         UserSession.setData(res.data);
-        history.push("/Home/trainer");
+        console.log(res.data.userInfo.roles[0])
+        
+        if (res.data.userInfo.roles[0] == "montir")
+        { 
+          history.push("/Home/Student");
+        }
+        else{
+          history.push("/Home/trainer");
+        }
+
+        
       })
       .catch(e => {
         console.log(e);
       });
+
+      
   }
+
+
+
+
+  
+
   render() {
+
     return (
       <div>
         <Header />
 
         <div className="container-login100">
-          <div className="login100-more">
+        <Grid>
+          <div className="login100-more" style={{backgroundColor:"#000000"}}>
             <img
               src={Login}
               alt="login"
               style={{ position: "relative", height: 648, weight: 500 }}
             />
           </div>
-
-          <div className="wrap-login100 p-l-50 p-r-50 p-t-120">
+          </Grid>
+          
+          <div className="wrap-login100 p-l-50 p-r-50 p-t-120" >
             <form onSubmit={this.handleLogin}>
               <Grid
                 item
@@ -81,6 +102,7 @@ export default class UserRegister extends React.Component {
                     type="password"
                     name="pass"
                     placeholder="Masukkan password"
+                    
                     value={this.state.password}
                     onChange={e => {
                       this.setState({ password: e.target.value });

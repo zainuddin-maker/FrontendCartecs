@@ -14,6 +14,7 @@ const options = {
 };
 
 function App() {
+  
   return (
     <AlertProvider template={AlertTemplate} {...options}>
       <Switch>

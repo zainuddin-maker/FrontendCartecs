@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Button } from '@material-ui/core';
+
 import { COLOR, BOLD, COLUMN_CENNTER, BUTTON_OVAL, DARK ,BUTTON_HOME } from '../../../assets/css/main';
 import { Link } from "react-router-dom";
 import { grey } from '@material-ui/core/colors';
@@ -116,7 +117,7 @@ export default class Home extends React.Component {
                                     </Grid>
                                     {
                                         overview.map((value, i) => {
-                                            return (<Grid key={i} item md={3} style={{ ...COLUMN_CENNTER }}>
+                                            return (<Grid key={i} item md={3} style={{ ...COLUMN_CENNTER  }}>
                                                 <div style={{ ...COLUMN_CENNTER, textAlign: 'center', width: 200   }}>
                                                     <div >
                                                     <img alt={value.alt} src={value.image} style={{ backgroundColor:grey[100], borderRadius: 50 , height: 80, width: 80, marginBottom: 10 }} />

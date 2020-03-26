@@ -2,7 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./app/main/App";
+
 import Upload from "../src/app/pages/home/uploadimage";
+import Dropdown from "../src/app/components/dropdown/dropdownprofile";
+import Dropkategori from "../src/app/components/dropdown/dropkategori";
+import Get from "../src/app/components/coba/getrequest";
+import Cobag from "../src/app/pages/auth/register/coballl";
+
+
+
 import * as serviceWorker from "./serviceWorker";
 import "./assets/css/font.css";
 
@@ -11,6 +19,9 @@ import { BrowserRouter } from "react-router-dom";
 import { history } from "app/utils";
 import configureStore from "redux/configureStore";
 import { Provider } from "react-redux";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+
 
 const initialState = {};
 const store = configureStore(initialState, history);
@@ -18,7 +29,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <App />
+        <App/>
       </ConnectedRouter>
     </Provider>
   </BrowserRouter>,

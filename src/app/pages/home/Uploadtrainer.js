@@ -123,7 +123,7 @@ export default function Uploadtrainer()  {
                                                                           </div>
                                                                       </Grid>
                                                                       <Grid item lg={9} style={{height:"100%"}}>
-                                                                          <textarea  className="input2" placeholder="Tuliskan Judul Materi">
+                                                                          <textarea maxLength="10"  className="input2" placeholder="Tuliskan Judul Materi">
 
                                                                           </textarea>
                                                                           
