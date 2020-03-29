@@ -1,17 +1,9 @@
 import React from 'react';
-import { Grid, Button } from '@material-ui/core';
-import { COLOR, BOLD, COLUMN_CENNTER1,COLUMN_CENNTER2, BUTTON_OVAL, DARK } from '../../../../assets/css/main';
-import { Header, Footer } from '../../../components';
-import { Link } from "react-router-dom";
-import { grey , red } from '@material-ui/core/colors';
-import { Carousel } from "react-responsive-carousel"; 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-import Info from '../../../../assets/img/Infoicon.svg';
-import '../../../../assets/css/login/util.css';
-import '../../../../assets/css/login/main.css';
+import { Grid } from '@material-ui/core';
+import { Header} from '../../../components';
 import InfoIcon from '@material-ui/icons/Info';
 import { RequestPost, history, UserSession } from "app/utils";
-
+import './usermontir.css';
 
 export default class UserRegister extends React.Component {
 
@@ -128,70 +120,56 @@ export default class UserRegister extends React.Component {
                         <Header />
                 </Grid>
                    
-                <Grid container justify="center" alignContent="center" style={{backgroundColor:"#000000"}}>
-                    <Grid item lg={12} style={{ backgroundColor: "#ffffff" }}>
-                        <Grid container justify="center" direction="row" alignItems="flex-start">
-                            <Grid item lg={10}>
-                                <Grid container justify="center" direction="row" alignItems="flex-start" >
-                                    <Grid item md={10} style={{ textAlign: 'center', height: "80px", marginTop: 100 ,paddingTop:"15px" }}>
-                                        <h2>Daftar sebagai Montir</h2>
+                <Grid item lg={12} style={{ backgroundColor: "#fbfbfb" }} container justify="center" alignContent="center" >
+                    <Grid item lg={10} container justify="center" direction="row" alignItems="flex-start"  >
+                                    <Grid container alignItems="center" justify="center" item md={12} style={{ textAlign: 'center', height: 120, marginTop: 70  }}>
+                                        <div className="daftarreader">Daftar sebagai reader</div>
                                     </Grid>
-                                    <Grid  item lg={12} style={{ ... COLUMN_CENNTER2}}>
-                                    <form onSubmit={this.handleRegister}>
-                                                <Grid  style={{paddingTop :"0px", width: 400,backgroundColor:"#ffffff" , height :"550px" ,borderRadius:"8px"  ,border: '1px solid #eaeaea' }}>
-                                                    <div>
-                                                        <Grid container direction="row" style={{ backgroundColor:"#f79256", borderTopLeftRadius:"8px" ,borderTopRightRadius:"8px",paddingTop:"16px" ,paddingBottom:"16px",paddingLeft:"16px",paddingRight:"16px" }}>
+                                    <Grid container alignItems="center"  item lg={12} style={{ display: 'flex', flexDirection: 'column' }}>
+                                      <form onSubmit={this.handleRegister}>
+                                                <Grid container direction="column" alignItems="center" style={{paddingTop :"0px", width: 400,backgroundColor:"#ffffff"  ,borderRadius:"8px"  ,border: '1px solid #eaeaea' ,marginBottom:"20px"}}>
+                                                    
+                                                     <Grid container direction="row" style={{ backgroundColor:"#f79256", borderTopLeftRadius:"8px" ,borderTopRightRadius:"8px",paddingTop:"16px" ,paddingBottom:"16px",paddingLeft:"16px",paddingRight:"16px" }}>
                                                           <Grid container justify="center" alignItems="flex-start" style={{ width:"12%" }}>
-                                                          <img
-                                                            src={Info} 
-                                                            alt="Info"
-                                                          />
+                                                                  <InfoIcon style={{color:"#ffffff"}}/>
                                                           </Grid>
                                                           <Grid style={{ width:"88%",color:"#ffffff" ,fontSize:"12px" ,fontWeight:"600"}}>
-                                                          
-                                                            
-                                                            <Greeting  isdaftar={isdaftar} isregis={isregis} />
-                                                            
+                                                                <Greeting  isdaftar={isdaftar} isregis={isregis} />
                                                           </Grid>
 
                                                         </Grid>
-                                                    </div>
-
-                                                
-                                                    <div  style={{  paddingLeft:"45px" ,paddingRight:"45px" }} >
-                                                        <div className= {`wrap-input100 ${this.errorClass(this.state.formErrors.email)}`} data-validate="Username is required">
-                                                          <span  style={{fontFamily:"sans-serif" ,fontWeight:"bold ",fontSize :"13px",color:"#333333"}}>Email</span>
+                                                   
+                                                     <Grid  style={{width:350}}>
+                                                    
+                                                        <div className={`wrapinput ${this.errorClass(this.state.formErrors.fullName)}`} >
+                                                          <span  className="textlengkap">Nama Lengkap</span>
+                                                          <input  
+                                                          type="text" 
+                                                          name="fullName" 
+                                                          placeholder="Masukkan nama lengkap" 
+                                                          className="style-kotak"
+                                                          value={this.state.fullName}
+                                                          onChange={this.handleUserInput} 
+                                                            />
+                                                          
+                                                         </div>
+                                                   
+                                                  
+                                                        <div className= {`wrapinput ${this.errorClass(this.state.formErrors.email)}`} data-validate="Username is required">
+                                                          <span  className="textlengkap">Email</span>
                                                           <input  
                                                           type="text" 
                                                           name="email" 
-                                                          placeholder="Masukkan email Anda" 
+                                                          placeholder="Masukkan email" 
                                                           className="style-kotak"
                                                           value={this.state.email}
                                                           onChange={this.handleUserInput} 
                                                             />
                                                           
                                                          </div>
-                                                    </div>
-
-                                                    <div  style={{  paddingLeft:"45px" ,paddingRight:"45px" }} >
-                                                        <div className={`wrap-input100 ${this.errorClass(this.state.formErrors.fullName)}`} data-validate="Username is required">
-                                                          <span  style={{fontFamily:"sans-serif" ,fontWeight:"bold ",fontSize :"13px",color:"#333333"}}>Full Name</span>
-                                                          <input  
-                                                          type="text" 
-                                                          name="fullName" 
-                                                          placeholder="Masukkan Nama Panjang Anda" 
-                                                          className="style-kotak"
-                                                          value={this.state.fullName}
-                                                          onChange={this.handleUserInput} 
-                                                            />
-                                                          <span className="focus-input100"></span>
-                                                         </div>
-                                                    </div>
-
-
-                                                    <div  style={{ paddingLeft:"45px" ,paddingRight:"45px" }} >
-                                                        <div className={`wrap-input100 ${this.errorClass(this.state.formErrors.password)}`} >
-                                                          <span  style={{fontFamily:"sans-serif" ,fontWeight:"bold ",fontSize :"13px",color:"#333333"}}>Password</span>
+                       
+                                                        <div className={`wrapinput ${this.errorClass(this.state.formErrors.password)}`} >
+                                                          <span  className="textlengkap">Password</span>
                                                           <input  
                                                           type="password" 
                                                           name="password" 
@@ -203,11 +181,8 @@ export default class UserRegister extends React.Component {
                                                           />
                                                           <span className="focus-input100"></span>
                                                          </div>
-                                                    </div>
-
-                                                    <div  style={{  paddingLeft:"45px" ,paddingRight:"45px" }} >
-                                                        <div className={`wrap-input100 ${this.errorClass(this.state.formErrors.confirmpassword)}`} data-validate="Username is required">
-                                                          <span  style={{fontFamily:"sans-serif" ,fontWeight:"bold ",fontSize :"13px",color:"#333333"}}>Konfirmasi Password</span>
+                                                     <div className={`wrapinput ${this.errorClass(this.state.formErrors.confirmpassword)}`} data-validate="Username is required">
+                                                          <span  className="textlengkap">Konfirmasi Password</span>
                                                           <input  
                                                           type="password" 
                                                           name="confirmpassword" 
@@ -219,35 +194,43 @@ export default class UserRegister extends React.Component {
                                                            />
                                                           <span className="focus-input100"></span>
                                                          </div>
-                                                    </div>
+                                                   
 
-                                                    <div className="container-login100-form-btn" style={{  paddingLeft:"45px" ,paddingRight:"45px",paddingTop:"20px" }}  >
-                                                       <div className="wrap-login100-form-btn" style={{ margin: 'auto' }}>
-                                                           <div className="login100-form-bgbtn" style={{ backgroundColor: "#3B69CE"  }}>
-                                    
-                                                          </div>
-                                                             <button type="submit" className="login100-form-btn1 " disabled={!this.state.formValid} >
+                                                    <div className="containerbuttondaftar">
+                                                           <button type="submit" className="buttondaftar"  disabled={!this.state.formValid} >
                                                               Daftar
 							                                              </button>
-                                                      </div>
                                                    </div>
-
-                                                    
-                                                    
-                                                </Grid>
+                                                   </Grid>
+                                                   <Grid container justify="center" style={{ backgroundColor:"#eaeaea" , width:400 , borderBottomLeftRadius:"8px" ,borderBottomRightRadius:"8px" }}>
+                                                            <div  className="ataudaftar" >
+                                                                 Atau daftar menggunakan
+                                                            </div>
+                                                            <Grid   container direction="row" alignItems="flext-start" justify="space-between"  style={{paddingBottom:"20px" ,width:350 }}>
+                                                                
+                                                                        <div className="containerbuttonmedia"  >
+                                                                           <button className="buttonmedia" >
+                                                                                    Gmail
+                                                                            </button>
+                                                                       </div>
+                                                                        <div className="containerbuttonmedia">
+                                                                            <button className="buttonmedia" style={{backgroundColor:"#007bb5"}}>
+                                                                                    Linkedin
+                                                                            </button>
+                                                                       </div>
+                                                                        <div className="containerbuttonmedia" >
+                                                                             <button className="buttonmedia" style={{backgroundColor:"#3a559f"}}>
+                                                                                    Facebook
+                                                                            </button>
+                                                                        </div>
+                                                                     </Grid>
+                                                                   </Grid>
+                                                  </Grid>
                                                 </form>
                                      </Grid>
-                                     <Grid item md={10} style={{  height: "10px" }}>
-                                        
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                   
-                </Grid>
-                
-            </React.Fragment>
+                                     </Grid>
+                      </Grid>
+                   </React.Fragment>
         )
     }
 }
@@ -276,9 +259,4 @@ function Greeting(props) {
       return <div>Untuk mendaftar sebagai montir, gunakan email perusahaan dimana tempat Anda bekerja</div>;
     }
   }
-
- 
-
-  
-  
 }

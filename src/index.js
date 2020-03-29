@@ -29,7 +29,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <App/>
+        <Get/>
       </ConnectedRouter>
     </Provider>
   </BrowserRouter>,

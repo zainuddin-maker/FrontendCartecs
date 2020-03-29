@@ -1,13 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../../../../assets/css/login/util.css";
-import "../../../../assets/css/login/main.css";
-import "assets/css/font.css";
-import { Grid, Button } from "@material-ui/core";
+import { Grid} from "@material-ui/core";
 import { Login } from "../../../../assets/img";
 import { Header} from "../../../components";
 
 import { RequestPost, history, UserSession } from "app/utils";
+import './login.css';
 
 export default class UserRegister extends React.Component {
   constructor(props) {
@@ -54,34 +51,34 @@ export default class UserRegister extends React.Component {
       <div>
         <Header />
 
-        <div className="container-login100">
-        <Grid>
-          <div className="login100-more" style={{backgroundColor:"#000000"}}>
+        <div className="containerlogin">
+       
+          <Grid className="loginimage" style={{backgroundColor:"#000000"}}>
             <img
               src={Login}
               alt="login"
-              style={{ position: "relative", height: 648, weight: 500 }}
+              style={{ position: "relative", height: 648, width: "100%" }}
             />
-          </div>
+         
           </Grid>
           
-          <div className="wrap-login100 p-l-50 p-r-50 p-t-120" >
+          <div className="wraplogin" style={{paddingLeft:"50px",paddingRight:"50px",paddingTop:"120px"}} >
             <form onSubmit={this.handleLogin}>
               <Grid
                 item
                 lg={12}
                 style={{ backgroundColor: "" }}>
                 <Grid item md={12} style={{ height: "50px" }}>
-                  <span className="login100-form-title">
+                  <span className="loginselamatdatang">
                     Selamat datang kembali di CARtecs E-learning
                   </span>
                 </Grid>
                 <div style={{ paddingTop: "30px" }}>
-                  <span className="label-input100">Email</span>
+                  <span className="labelinput">Email</span>
                 </div>
                 <div>
                   <input
-                    className="input100"
+                    className="inputlogintext"
                     type="text"
                     name="username"
                     placeholder="Masukkan email Anda"
@@ -93,12 +90,12 @@ export default class UserRegister extends React.Component {
                 </div>
 
                 <div style={{ paddingTop: "30px" }}>
-                  <span className="label-input100">Password</span>
+                  <span className="labelinput" >Password</span>
                 </div>
 
                 <div tyle={{ paddingTop: "5px" }}>
                   <input
-                    className="input100"
+                    className="inputlogintext"
                     type="password"
                     name="pass"
                     placeholder="Masukkan password"
@@ -110,64 +107,37 @@ export default class UserRegister extends React.Component {
                   />
                 </div>
 
-                <div
-                  className="container-login100-form-btn"
-                  style={{ paddingTop: "40px" }}>
-                  <div
-                    className="wrap-login100-form-btn"
-                    style={{ margin: "auto" }}>
-                    {/* <Link to="/Home/student"> */}
-                    <button type="submit" className="login100-form-btn">
+                <div className="containerloginformmasuk" >
+                   {/* <Link to="/Home/student"> */}
+                    <button type="submit" className="loginformbtnmasuk">
                       Masuk
                     </button>
                     {/* </Link> */}
-                  </div>
-                </div>
+                  
+                 </div>
                 <div className="Lupapassword">
-                  <Link to="/Home/trainer" style={{ fontSize: "12px" }}>
-                    <span>
+                   <span>
                       <u>Lupa Password?</u>
                     </span>
-                  </Link>
-                </div>
-                <div className="Masukmenggunakan">
-                  <h4> Atau masuk menggunakan </h4>
-                </div>
-                <Grid
-                  container
-                  direction="row"
-                  justify="space-between"
-                  alignItems="center">
-                  <div className="container-login100-form-btn1">
-                    <div
-                      className="wrap-login100-form-btn"
-                      style={{ margin: "auto" }}>
-                      <div
-                        className="login100-form-bgbtn"
-                        style={{ backgroundColor: "#e84f4a" }}></div>
-                      <button className="login100-form-btn3">Gmail</button>
-                    </div>
+                 </div>
+                
+                  <h4 className="Masukmenggunakan"> Atau masuk menggunakan </h4>
+                
+                <Grid container direction="row" justify="space-between" alignItems="center">
+                  <div className="containerlogin100formbtnmedia">
+                    <button className="loginformbtnmedia">Gmail</button>
                   </div>
-                  <div className="container-login100-form-btn1 ">
-                    <div
-                      className="wrap-login100-form-btn"
-                      style={{ margin: "auto" }}>
-                      <div
-                        className="login100-form-bgbtn"
-                        style={{ backgroundColor: "#007bb5" }}></div>
-                      <button className="login100-form-btn3">Linkedin</button>
-                    </div>
+
+
+                  <div className="containerlogin100formbtnmedia">
+                     <button className="loginformbtnmedia" style={{backgroundColor:"#007bb5"}}>Linkedin</button>
                   </div>
-                  <div className="container-login100-form-btn1">
-                    <div
-                      className="wrap-login100-form-btn"
-                      style={{ margin: "auto" }}>
-                      <div
-                        className="login100-form-bgbtn"
-                        style={{ backgroundColor: "#3a559f" }}></div>
-                      <button className="login100-form-btn3">Facebook</button>
-                    </div>
-                  </div>
+
+                  <div className="containerlogin100formbtnmedia">
+                   <button className="loginformbtnmedia" style={{backgroundColor:"#3a559f"}}>Facebook</button>
+                 </div>
+
+
                 </Grid>
               </Grid>
             </form>

@@ -1,35 +1,25 @@
 import React from 'react';
 import { Grid, Button } from '@material-ui/core';
-import { COLOR, BOLD, COLUMN_CENNTER1, BUTTON_OVAL, DARK } from '../../../../assets/css/main';
-import { Header, Footer } from '../../../components';
+import { Header} from '../../../components';
 import { Link } from "react-router-dom";
-import { grey , red } from '@material-ui/core/colors';
-import { Carousel } from "react-responsive-carousel"; 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-import { MazdaLogo, BmwLogo, VwLogo, SuzukiLogo, AudiLogo, ToyotaLogo , Background , Otomotif ,Career, Sertified , Increase ,Perusahaan,Montir,Member} from '../../../../assets/img';
+import { Montir,Member} from '../../../../assets/img';
 
 const overview = [
     {
         path: "/users/registermontir",
         alt: "Bidang Otomotif",
         image: Montir ,
-        title: 'Montir',
-        short_desc: 'Saya montir dari perusahaan / brand otomotif'
+        title: 'Reader',
+        short_desc: 'Saya tertarik dengan otomotif dan mencari kursus otomotif'
     },
     {
         path: "/users/registermember",
         alt: "Bidang Career",
         image: Member ,
-        title: 'Member Montir',
-        short_desc: 'Saya tertarik dengan otomotif dan mencari kursus otomotif'
+        title: 'Contributor',
+        short_desc: 'Saya tertarik menjadi contributor untuk kursus otomotif'
     },
-    {
-        path: "/users/registerperusahaan",
-        alt: "Bidang Sertified",
-        image: Perusahaan ,
-        title: 'Perusahaan',
-        short_desc: 'Saya pemilik dari merk/brand otomotif'
-    },
+    
 ];
 
 
@@ -38,14 +28,12 @@ export default class UserRegister extends React.Component {
         return (
             
             <React.Fragment>
-                 <Grid item lg={12}>
-                        <Header />
-                    </Grid>
-                   
-                <Grid container justify="center" alignContent="center">
+                 
                    
                 
-                    <Grid item lg={12} style={{ backgroundColor: grey[100] }}>
+                   
+                
+                    <Grid container justify="center" alignContent="center"  item lg={12} style={{ backgroundColor: "#ffffff" }}>
                         <Grid container justify="center" direction="row" alignItems="flex-start">
                             <Grid item lg={10}>
                                 <Grid container justify="center" direction="row" alignItems="flex-start" >
@@ -54,22 +42,22 @@ export default class UserRegister extends React.Component {
                                     </Grid>
                                     {
                                         overview.map((value, i) => {
-                                            return (<Grid key={i} item md={3} style={{ ...COLUMN_CENNTER1 }}>
+                                            return (<Grid key={i} item md={3} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                                 <div style={{paddingBottom :"10px",paddingTop :"40px", textAlign: 'center', width: 240,backgroundColor:"#ffffff" , height :280 ,borderRadius:"8px" ,paddingLeft:"20px",paddingRight:"20px" ,border: '1px solid #eaeaea' }}>
                                                     <div >
-                                                    <img alt={value.alt} src={value.image} style={{ backgroundColor:"#ffffff", borderRadius: 0 , height: 80, width: 80, marginBottom: 10 ,  }} />
+                                                    <img alt={value.alt} src={value.image} style={{ backgroundColor:"#ffffff", borderRadius: 0 , height: 80, width: 80, marginBottom: 10   }} />
                                                     </div>
                                                     <div>
-                                                        <span style={BOLD}>{value.title}</span>
+                                                        <span style={{fontWeight:"bold"}}>{value.title}</span>
                                                     </div>
                                                     <div>
-                                                        <span style={{ color: COLOR.darkGrey, fontSize: 12 ,lineHeight:"18px"}}>{
+                                                        <span style={{ color: "rgba(51, 51, 51, 0.6)", fontSize: 12 ,lineHeight:"18px"}}>{
                                                             value.short_desc
                                                         }</span>
                                                     </div>
                                                     <div style={{paddingTop :"10px"}}>
                                                     <Link to={value.path}>
-                                                      <Button style={{ ...BUTTON_OVAL, ...DARK, width: "90px", paddingLeft: 20, paddingRight: 20 }}>
+                                                      <Button style={{ textAlign:'center', fontSize:"7px",fontWeight:'bold' ,borderRadius: "20px",   height: "25px", border: "0.5px solid", textTransform: 'capitalize',color: "white",backgroundImage:"linear-gradient(to top, #7aa2dc, #3b69ce)", width: "90px", paddingLeft: 20, paddingRight: 20 }}>
                                                        Pilih
                                                        </Button>
                                                        </Link>
@@ -87,7 +75,7 @@ export default class UserRegister extends React.Component {
                         </Grid>
                     </Grid>
                    
-                </Grid>
+              
                 
             </React.Fragment>
         )

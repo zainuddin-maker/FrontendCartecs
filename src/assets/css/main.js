@@ -5,7 +5,7 @@ import red from '@material-ui/core/colors/red';
 
 
 
-export const BUTTON_OVAL = {textAlign:'center', fontSize:"7px",fontWeight:'bold' ,borderRadius: "20px", color:blue[500] ,   width: "66.5px", height: "25px", border: "0.5px solid", borderColor: blue[500], textTransform: 'capitalize' }
+export const BUTTON_OVAL = {textAlign:'center', fontSize:"7px",fontWeight:'bold' ,borderRadius: "20px",   height: "25px", border: "0.5px solid", textTransform: 'capitalize' }
 export const BUTTON_Header_masuk = { color: "white", fontSize:"10px",fontWeight:'bold' ,borderRadius: "20px" ,   textTransform: 'capitalize' }
 export const BUTTON_Header_daftar = { color: "#4e7ad2",border:'solid 1px #4774d1', fontSize:"10px",fontWeight:'bold' ,borderRadius: "20px" ,   textTransform: 'capitalize' }
 export const BUTTON_HOME = {textAlign:'center',color: "white",
